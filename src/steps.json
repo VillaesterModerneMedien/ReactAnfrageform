@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "component": "step",
+    "name": "Step 1",
+    "fields": [
+      {
+        "component": "imageButton",
+        "name": "Vorname"
+      },
+      {
+        "component": "imageButton",
+        "name": "lastName"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "component": "step",
+    "name": "Step 2",
+    "fields": [
+      {
+        "component": "imageButton",
+        "name": "firstName"
+      },
+      {
+        "component": "imageButton",
+        "name": "lastName"
+      }
+    ]
+  }
+]
