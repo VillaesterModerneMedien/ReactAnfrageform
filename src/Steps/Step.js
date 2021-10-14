@@ -18,17 +18,26 @@ function Step({title}){
 
     console.log(jsonData[id])
 
-    const fields = jsonData[id].fields
+    let fields = [];
 
-    console.log(fields)
+    if(jsonData[id])
+    {
+        fields = jsonData[id]?.fields
+        console.log(fields)
+    }
+    else{
+        fields = false
+    }
 
-    {fields.map(type => Components(type))}
+
 
     return (
         <div>
-            <input type={fields[0].type} />
 
-            {fields.map(block => Components(block))}
+            {(fields) && (
+                console.log('felder',fields),
+                fields.map(block => Components(block))
+            )}
 
             <ul className="navButtons">
                 <li>Previous</li>

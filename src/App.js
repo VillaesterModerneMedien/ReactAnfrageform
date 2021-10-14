@@ -7,28 +7,12 @@ import {
 } from 'react-router-dom'
 import './App.css';
 import { AppContextProvider } from './components/AppContext';
-import StepOne from './Steps/stepOne.js'
-import StepTwo from './Steps/stepTwo.js'
-import StepThree from './Steps/stepThree.js'
 import Step from './Steps/Step.js'
 import NotFound from "./Steps/NotFound";
 import jsonData from './steps.json';
 import Components from './components'
 
-const steps = [
-  { component: <StepOne /> },
-  { component: <StepTwo /> },
-  { component: <StepThree /> },
-]
-
-// custom styles
-const prevStyle = { background: '#33c3f0' }
-const nextStyle = { background: '#33c3f0' }
-const id = 10
-
 function App() {
-
-
 
   return (
       <AppContextProvider>

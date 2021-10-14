@@ -50,25 +50,7 @@ const appReducer = produce((draft, action) => {
       break;
 
     case SET_STEP_DATA:
-      draft.data = action.data;
-      break;
-
-    case ADD_QUERY:
-      if (!draft[action.queryType]) {
-        draft[action.queryType] = [];
-      }
-
-      draft[action.queryType].push(action.state);
-      break;
-
-    case REMOVE_QUERY:
-      if (draft[action.queryType] && draft[action.queryType].length > 0) {
-        draft[action.queryType] = draft[action.queryType].slice(
-          0,
-          draft[action.queryType].length - 1
-        );
-      }
-
+      draft.data.push(action.data);
       break;
 
     default:

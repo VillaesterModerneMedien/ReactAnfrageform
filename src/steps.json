@@ -3,6 +3,7 @@
     "id": 1,
     "component": "step",
     "name": "Step 1",
+    "includeNav": false,
     "fields": [
       {
         "component": "imageButton",
@@ -18,14 +19,32 @@
     "id": 2,
     "component": "step",
     "name": "Step 2",
+    "question": "Was geht bei dir?",
+    "includeNav": false,
     "fields": [
       {
         "component": "imageButton",
-        "name": "firstName"
+        "name": "wert1",
+        "image": "/images/aussen.svg",
+        "value": "aussen"
       },
       {
         "component": "imageButton",
-        "name": "lastName"
+        "name": "wert2",
+        "image": "/images/balcony.svg",
+        "value": "balcony"
+      },
+      {
+        "component": "input",
+        "name": "lastName",
+        "type": "text",
+        "value": "aussen2"
+      },
+      {
+        "component": "input",
+        "name": "lastName",
+        "label": "Wurst",
+        "type": "text"
       }
     ]
   }
