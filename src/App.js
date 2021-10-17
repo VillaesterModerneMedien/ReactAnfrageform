@@ -34,7 +34,7 @@ function App() {
                   </Route>
                   <Route
                       exact
-                      path="/books/:id"
+                      path="/step/:id"
                       render={props => (
                           <Step {...props} title={`Props through render`} />
                       )}
