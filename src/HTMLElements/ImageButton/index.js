@@ -6,17 +6,12 @@ import SVG, { Props as SVGProps } from 'react-inlinesvg';
 import { useContext, useState, useEffect } from "react";
 import {AppContext, SET_STEP_DATA} from '../../components/AppContext'
 
-
-
-
 function ImageButton({ image, value, name, onClick, ...props }) {
   const { state, dispatch } = useContext(AppContext);
-  //const [firstName, setFirstName] = useState(state?.data?.firstName);
   const [stepData, setStepData] = useState(state?.data || {});
 
+  // Step ID aus der URL....
   const { id } = useParams();
-
-
 
   console.log(stepData);
 
