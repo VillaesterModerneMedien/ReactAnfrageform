@@ -1,24 +1,56 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "component": "step",
     "name": "Step 1",
+    "question": "Wie heisst du?",
+    "includeNav": true,
+    "fields": [
+      {
+        "component": "input",
+        "type": "text",
+        "label": "Vorname",
+        "name": "vorname"
+      },
+      {
+        "component": "input",
+        "type": "text",
+        "label": "Nachname",
+        "name": "lastName"
+      },
+      {
+        "component": "imageButton",
+        "name": "btnSchritt1",
+        "image": "/images/aussen.svg",
+        "value": "aussen"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "component": "step",
+    "name": "Step 2",
+    "question": "Was geht bei dir?",
     "includeNav": false,
     "fields": [
       {
         "component": "imageButton",
-        "name": "Vorname"
+        "name": "wert1",
+        "image": "/images/aussen.svg",
+        "value": "Aussen"
       },
       {
         "component": "imageButton",
-        "name": "lastName"
+        "name": "wert2",
+        "image": "/images/balcony.svg",
+        "value": "Balkon"
       }
     ]
   },
   {
     "id": 2,
     "component": "step",
-    "name": "Step 2",
+    "name": "Step 3",
     "question": "Was geht bei dir?",
     "includeNav": false,
     "fields": [
@@ -49,3 +81,4 @@
     ]
   }
 ]
+
