@@ -29,6 +29,18 @@ function ImageButton({ image, value, name, onClick, ...props }) {
     });
   };
 
+  /*
+  EIGENTLICH SOLL stepData so aussehen:
+
+  {'wert1': 'aussen','wert2':'innen',........}
+
+  das sollen die Werte meines Forms werden, die ich am Ende aller Steps übergeben will...
+  es wird also mehrere Steps geben und stepData soll in jedem Step bisschen mehr befüllt werden
+
+
+
+   */
+
   return (
     <button
         className="imageButton"
