@@ -20,6 +20,8 @@ function App() {
     const location = useHistory();
     console.log("location", location);
 
+    // TODO: noch checken, wie /step/1 zur Startseite machen
+
   return (
       <AppContextProvider>
           <Router>
@@ -30,18 +32,8 @@ function App() {
                       timeout={600}
                   >
                   <Switch>
-                      <Route exact path="/multistep">
-                          <div className="App">
-                              aaa
-                          </div>
-                      </Route>
                       <Route exact path="/">
                           <div className="App">
-                          </div>
-                      </Route>
-                      <Route exact path="/wurst">
-                          <div className="App">
-
                           </div>
                       </Route>
                       <Route
@@ -51,10 +43,6 @@ function App() {
                               <Step {...props} title={`Props through render`} />
                           )}
                       />
-                      <Route path='/formStep/' >
-                          <h1>Hello React</h1>
-                          {jsonData.map(block => Components(block))}
-                      </Route>
                   </Switch>
                   </CSSTransition>
               </TransitionGroup>
