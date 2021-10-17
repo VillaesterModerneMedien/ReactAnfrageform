@@ -8,23 +8,22 @@ import {AppContext, SET_STEP_DATA} from '../../components/AppContext'
 
 function ImageButton({ image, value, name, onClick, ...props }) {
   const { state, dispatch } = useContext(AppContext);
-  const [stepData, setStepData] = useState(state?.data || {});
+  const [stepData, setStepData] = useState(state?.data);
 
   // Step ID aus der URL....
   const { id } = useParams();
 
   console.log(stepData);
 
-  const handleClick = (e) => {
-    let data = [stepData]
-    data.push({[name]: e.currentTarget.value})
 
-    setStepData(data)
+  const handleClick = (e) => {
+    const newData = {...stepData, [name]: e.currentTarget.value}
+    setStepData(newData)
 
     dispatch({
       type: SET_STEP_DATA,
       data: {
-          stepData
+          ...stepData
       },
     });
   };
