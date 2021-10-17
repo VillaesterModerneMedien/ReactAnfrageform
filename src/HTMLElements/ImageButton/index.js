@@ -13,7 +13,8 @@ function ImageButton({ image, value, name, onClick, ...props }) {
   // Step ID aus der URL....
   const { id } = useParams();
 
-  console.log(stepData);
+  console.log('stepData', stepData);
+  console.log('state', state);
 
 
   const handleClick = (e) => {
