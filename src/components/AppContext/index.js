@@ -12,9 +12,6 @@ export const AppContext = createContext();
  * Entspricht dem, was man per dispatch({ type: XYZ, ...}) anspricht und im switch Abfragt.
  */
 export const SET_STEP_START = 'SET_STEP_START';
-export const SET_STEP_MAIN = 'SET_STEP_MAIN';
-export const ADD_QUERY = 'ADD_QUERY';
-export const REMOVE_QUERY = 'REMOVE_QUERY';
 export const SET_STEP_DATA = 'SET_STEP_DATA';
 
 /**
