@@ -35,6 +35,8 @@ const initialState = {};
  */
 const appReducer = produce((draft, action) => {
   switch (action.type) {
+
+    // Das hier habe ich nur drin gelassen, damit ich von dir abgucken kann :-)
     case SET_STEP_START:
       if (!draft.start) {
         draft.start = {};
