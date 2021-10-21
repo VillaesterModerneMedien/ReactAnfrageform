@@ -3,26 +3,33 @@
     "id": 0,
     "component": "step",
     "name": "Step 1",
-    "question": "Wie heisst du?",
+    "question": "Wo möchten Sie gefliest haben?",
     "includeNav": true,
+    "containerClass": "buttons",
     "fields": [
       {
-        "component": "input",
-        "type": "text",
-        "label": "Vorname",
-        "name": "vorname"
-      },
-      {
-        "component": "input",
-        "type": "text",
-        "label": "Nachname",
-        "name": "lastName"
+        "component": "imageButton",
+        "name": "step1",
+        "image": "/images/house.svg",
+        "value": "Im Wohnraum",
+        "label": "Im Wohnraum",
+        "stepToGo": 1
       },
       {
         "component": "imageButton",
-        "name": "btnSchritt1",
+        "name": "step1",
+        "image": "/images/garage.svg",
+        "value": "Garage",
+        "label": "Garage",
+        "stepToGo": 2
+      },
+      {
+        "component": "imageButton",
+        "name": "step1",
         "image": "/images/aussen.svg",
-        "value": "aussen"
+        "value": "Außenbereich",
+        "label": "Außenbereich",
+        "stepToGo": 3
       }
     ]
   },
@@ -30,20 +37,33 @@
     "id": 1,
     "component": "step",
     "name": "Step 2",
-    "question": "Was geht bei dir?",
-    "includeNav": false,
+    "question": "Was soll gefliest werden?",
+    "includeNav": true,
+    "containerClass": "buttons",
     "fields": [
       {
         "component": "imageButton",
-        "name": "wert1",
-        "image": "/images/aussen.svg",
-        "value": "Aussen"
+        "name": "step2",
+        "image": "/images/bathroom.svg",
+        "value": "Badezimmer",
+        "label": "Badezimmer",
+        "stepToGo": 1
       },
       {
         "component": "imageButton",
-        "name": "wert2",
-        "image": "/images/balcony.svg",
-        "value": "Balkon"
+        "name": "step2",
+        "image": "/images/kitchen.svg",
+        "value": "Küche",
+        "label": "Küche",
+        "stepToGo": 2
+      },
+      {
+        "component": "imageButton",
+        "name": "step2",
+        "image": "/images/room.svg",
+        "value": "Allgemeiner Wohnraum",
+        "label": "Allgemeiner Wohnraum",
+        "stepToGo": 3
       }
     ]
   },
@@ -51,32 +71,103 @@
     "id": 2,
     "component": "step",
     "name": "Step 3",
-    "question": "Was geht bei dir?",
-    "includeNav": false,
+    "question": "Sind alle Vorarbeiten erledigt? (alter Belag entfernen etc.)",
+    "includeNav": true,
+    "containerClass": "buttons",
     "fields": [
       {
         "component": "imageButton",
-        "name": "wert1",
-        "image": "/images/aussen.svg",
-        "value": "aussen"
+        "name": "step3",
+        "image": "/images/check.svg",
+        "value": "Ja",
+        "label": "Ja",
+        "stepToGo": 1
       },
       {
         "component": "imageButton",
-        "name": "wert2",
-        "image": "/images/balcony.svg",
-        "value": "balcony"
+        "name": "step3",
+        "image": "/images/half.svg",
+        "value": "Teilweise",
+        "label": "Teilweise",
+        "stepToGo": 2
       },
       {
-        "component": "input",
-        "name": "lastName",
-        "type": "text",
-        "value": "aussen2"
+        "component": "imageButton",
+        "name": "step3",
+        "image": "/images/cancel.svg",
+        "value": "Nein",
+        "label": "Nein",
+        "stepToGo": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "component": "step",
+    "name": "Step 4",
+    "question": "Welche Materialien sollen verwendet werden?",
+    "includeNav": true,
+    "containerClass": "buttons",
+    "fields": [
+      {
+        "component": "imageButton",
+        "name": "step4",
+        "image": "/images/fliese1.svg",
+        "value": "Naturstein",
+        "label": "Naturstein",
+        "stepToGo": 1
       },
       {
-        "component": "input",
-        "name": "lastName",
-        "label": "Wurst",
-        "type": "text"
+        "component": "imageButton",
+        "name": "step4",
+        "image": "/images/fliese2.svg",
+        "value": "Mosaik",
+        "label": "Mosaik",
+        "stepToGo": 2
+      },
+      {
+        "component": "imageButton",
+        "name": "step4",
+        "image": "/images/fliese3.svg",
+        "value": "Keramikfliese",
+        "label": "Keramikfliese",
+        "stepToGo": 3
+      },
+      {
+        "component": "imageButton",
+        "name": "step4",
+        "image": "/images/fliese4.svg",
+        "value": "Noch unsicher",
+        "label": "Noch unsicher",
+        "stepToGo": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "component": "step",
+    "name": "Step 5",
+    "question": "Welche Materialien sollen verwendet werden?",
+    "includeNav": true,
+    "containerClass": "text",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "value": "",
+        "label": "Ihr Name:"
+      },
+      {
+        "component": "text",
+        "name": "email",
+        "value": "",
+        "label": "Ihr E-Mail Adresse:"
+      },
+      {
+        "component": "text",
+        "name": "phone",
+        "value": "",
+        "label": "Ihre Telefonnummer:"
       }
     ]
   }

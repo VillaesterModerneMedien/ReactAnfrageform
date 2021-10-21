@@ -11,6 +11,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import './App.css';
 import { AppContextProvider } from './components/AppContext';
 import Step from './Steps/Step.js'
+import Slick from './Steps/Slick.js'
 import NotFound from "./Steps/NotFound";
 import jsonData from './steps.json';
 import Components from './components'
@@ -35,6 +36,9 @@ function App() {
                       <Route exact path="/">
                           <div className="App">
                           </div>
+                      </Route>
+                      <Route exact path="/slick">
+                            <Slick />
                       </Route>
                       <Route
                           exact

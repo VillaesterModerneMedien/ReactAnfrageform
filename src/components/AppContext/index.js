@@ -50,6 +50,7 @@ const appReducer = produce((draft, action) => {
 
     case SET_STEP_DATA:
       draft.data = action.data;
+      draft.slider = action.slider;
       break;
 
     default:

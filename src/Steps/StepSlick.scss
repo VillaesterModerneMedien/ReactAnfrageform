@@ -1,0 +1,41 @@
+.formOuterContainer{
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #CCC;
+  text-align: center;
+  padding: 40px;
+}
+
+.slick-slider{
+  margin: 20px auto;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.58);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.58);
+  border: 2px solid white;
+  background: #F3F3F3;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-align: center;
+  left: 0;
+}
+.formElementsContainer{
+  max-width: 480px;
+  margin: 0 auto;
+}
+.formElementsContainer.buttons{
+  display: flex;
+}
