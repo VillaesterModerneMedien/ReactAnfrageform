@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import StepSlick from "./StepSlick";
 import './StepSlick.scss'
 
-
 import { useHistory } from 'react-router-dom';
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -15,10 +14,7 @@ import {AppContext, SET_STEP_DATA} from "../components/AppContext";
 
 function Slick({title}){
     const { state, dispatch } = useContext(AppContext);
-    const [stepId, setStepId] = useState(0);
-    const [sliderData, setSliderData] = useState(state?.slider || [0]);
-    const history = useHistory();
-
+    const [sliderData, setSliderData] = useState(state.slider || [0]);
     const sliderRef = useRef();
 
     const settings = {
@@ -31,33 +27,26 @@ function Slick({title}){
     };
 
     useEffect(() => {
-       //setSliderData(state?.slider || [jsonData]);
-
+        //setSliderData(state.slider);
+        //sliderRef.current.slickNext()
+        console.log('state', state.slider)
         console.log('sliderData', sliderData)
+
     }, [state]);
 
-    useEffect(() => {
-        //setStepId(parseInt(id) - 1);
-        //console.log('Slider',Slider)
-    });
-
-    const handleChange = (stepId, value) => {
-        setSliderData(oldArray => [...oldArray,stepId + 1] );
-        sliderRef.current.slickGoTo(parseInt(stepId + 1))
-        console.log('merged',sliderData)
-
-        dispatch({
-            type: SET_STEP_DATA,
-            slider: sliderData,
-        });
+    const handleChange = (sliderData, currentFormData) => {
+        //setSliderData(oldArray => [...oldArray,stepId + 1] );
+        //sliderRef.current.slickGoTo(parseInt(stepId + 1))
+        setSliderData(sliderData)
+        sliderRef.current.slickNext()
+        console.log('logger Slick',sliderData, currentFormData)
     };
-
 
     return (
         <div className="formOuterContainer">
             <Slider {...settings} id="formulator" ref={sliderRef}>
                 {sliderData.map(function(index){
-                    return <StepSlick onChange={handleChange} title={ jsonData[index].name } id={index} fields={jsonData[index].fields} containerClass={jsonData[index].containerClass} />;
+                    return <StepSlick onClick={handleChange} title={ jsonData[index].question } id={index} fields={jsonData[index].fields} containerClass={jsonData[index].containerClass} />;
                 })}
             </Slider>
         </div>

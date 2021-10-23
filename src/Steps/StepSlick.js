@@ -1,25 +1,33 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './StepSlick.scss'
-import SVG, { Props as SVGProps } from 'react-inlinesvg';
-
-
 import Components from "../components";
-import {AppContext, SET_STEP_DATA} from '../components/AppContext'
-
-function StepSlick({title, id, fields, containerClass, onChange}){
-    const { state, dispatch } = useContext(AppContext);
-    const [stepId, setStepId] = useState(0);
-    const slider = document.getElementsByClassName('slick-slider')
+import ImageButton from "../HTMLElements/ImageButton";
 
 
-    const handleClick = (e) => {
-        onChange(parseInt(e.currentTarget.id), e.currentTarget.value);
-    };
+function StepSlick({title, id, fields, containerClass, onChange, onClick}){
+    const [sliderData, setSliderData] = useState([0]);
+    const [formData, setFormData] = useState({})
 
     useEffect(() => {
-        //console.log(fields)
-        //console.log(id)
-    }, [state]);
+        //console.log('SliderData', sliderData)
+        //console.log('SliderData', formData)
+    }, []);
+
+    const handleClick = (e, stepToGo) => {
+        const newSliderData = sliderData
+        newSliderData.push(parseInt(stepToGo))
+
+        const currentFormData = {...formData, [e.currentTarget.id]:e.currentTarget.value}
+        setFormData(currentFormData);
+
+        onClick(sliderData, currentFormData)
+
+        //console.log('StepSlick stepToGo',stepToGo)
+        //console.log('StepSlick SliderData', sliderData)
+        //console.log('StepSlick FormData', formData)
+        //console.log('StepSlick CurrentFormData', currentFormData)
+        //console.log('StepSlick', e.currentTarget.id,e.currentTarget.value)
+    };
 
     return (
         <div className="slickItemContainer">
@@ -28,17 +36,8 @@ function StepSlick({title, id, fields, containerClass, onChange}){
                 <h1 className="mainTitle uk-heading uk-heading-primary">{title}</h1>
             )}
             <div className={`formElementsContainer ${containerClass}`}>
-                {fields.map(block => Components(block))}
+                {fields.map(block => Components({...block, onClick: handleClick}))}
             </div>
-
-            <button
-                className="imageButton"
-                onClick={handleClick}
-                value="1"
-                id={id}
-            >
-                {title}__{id}
-            </button>
 
         </div>
     )

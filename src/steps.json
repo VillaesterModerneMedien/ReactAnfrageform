@@ -9,27 +9,30 @@
     "fields": [
       {
         "component": "imageButton",
-        "name": "step1",
+        "name": "step1a",
         "image": "/images/house.svg",
         "value": "Im Wohnraum",
         "label": "Im Wohnraum",
-        "stepToGo": 1
+        "stepToGo": 1,
+        "onClick": "{handleClick}"
       },
       {
         "component": "imageButton",
-        "name": "step1",
+        "name": "step1b",
         "image": "/images/garage.svg",
         "value": "Garage",
         "label": "Garage",
-        "stepToGo": 2
+        "stepToGo": 2,
+        "onClick": "{handleClick}"
       },
       {
         "component": "imageButton",
-        "name": "step1",
+        "name": "step1c",
         "image": "/images/aussen.svg",
         "value": "Außenbereich",
         "label": "Außenbereich",
-        "stepToGo": 3
+        "stepToGo": 3,
+        "onClick": "{handleClick}"
       }
     ]
   },
@@ -47,7 +50,7 @@
         "image": "/images/bathroom.svg",
         "value": "Badezimmer",
         "label": "Badezimmer",
-        "stepToGo": 1
+        "stepToGo": 0
       },
       {
         "component": "imageButton",

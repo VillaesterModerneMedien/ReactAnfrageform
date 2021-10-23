@@ -1,9 +1,14 @@
+@import '../styles/variables';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .formOuterContainer{
   margin: 20px auto;
   border-radius: 10px;
   background: #CCC;
   text-align: center;
   padding: 40px;
+  color: $primaryText;
 }
 
 .slick-slider{
@@ -38,4 +43,11 @@
 }
 .formElementsContainer.buttons{
   display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.mainTitle{
+  font-family: Open Sans;
+  font-weight: 700;
 }

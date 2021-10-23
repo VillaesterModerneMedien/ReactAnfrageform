@@ -1,4 +1,4 @@
-import './ImageButton.scss';
+import './Button.scss';
 import {
   useParams
 } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import {AppContext, SET_STEP_DATA} from '../../components/AppContext'
 import jsonData from '../../steps.json';
 
-function ImageButton({ image, value, name, onClick, ...props }) {
+function Button({ image, value, name, onClick, ...props }) {
   const { state, dispatch } = useContext(AppContext);
   const [stepData, setStepData] = useState({});
   const history = useHistory();
@@ -35,6 +35,7 @@ function ImageButton({ image, value, name, onClick, ...props }) {
     const nextID = parseInt(id) + 1
 
     console.log('mergedData',mergedData);
+
     dispatch({
       type: SET_STEP_DATA,
       data: mergedData,
@@ -65,7 +66,7 @@ function ImageButton({ image, value, name, onClick, ...props }) {
 
   return (
     <button
-        className="imageButton"
+        className="btn button"
         onClick={handleClick}
         value={value}
         id={name}
@@ -75,4 +76,4 @@ function ImageButton({ image, value, name, onClick, ...props }) {
   );
 }
 
-export default ImageButton;
+export default Button;
