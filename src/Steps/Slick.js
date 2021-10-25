@@ -14,7 +14,8 @@ import {AppContext, SET_STEP_DATA} from "../components/AppContext";
 
 function Slick({title}){
     const { state, dispatch } = useContext(AppContext);
-    const [sliderData, setSliderData] = useState(state.slider || [0]);
+    const [sliderData, setSliderData] = useState(state?.sliderData || [0]);
+    const [formData, setFormData] = useState({})
     const sliderRef = useRef();
 
     const settings = {
@@ -27,19 +28,20 @@ function Slick({title}){
     };
 
     useEffect(() => {
-        //setSliderData(state.slider);
-        //sliderRef.current.slickNext()
-        console.log('state', state.slider)
         console.log('sliderData', sliderData)
-
+        setSliderData(sliderData)
     }, [state]);
 
     const handleChange = (sliderData, currentFormData) => {
-        //setSliderData(oldArray => [...oldArray,stepId + 1] );
         //sliderRef.current.slickGoTo(parseInt(stepId + 1))
-        setSliderData(sliderData)
-        sliderRef.current.slickNext()
-        console.log('logger Slick',sliderData, currentFormData)
+
+        const newSliderData = oldArray => [...sliderData, sliderData]
+            console.log(newSliderData(sliderData))
+        setSliderData(newSliderData(sliderData))
+
+        //setSliderData(oldArray => [...oldArray,sliderData] );
+        //sliderRef.current.slickNext()
+        console.log('logger Slick',sliderData,newSliderData(sliderData), currentFormData)
     };
 
     return (
