@@ -1,5 +1,5 @@
-import { createContext, useReducer } from 'react';
-import produce from 'immer';
+import { createContext, useReducer } from "react";
+import produce from "immer";
 
 export const AppContext = createContext();
 
@@ -11,15 +11,21 @@ export const AppContext = createContext();
  *
  * Entspricht dem, was man per dispatch({ type: XYZ, ...}) anspricht und im switch Abfragt.
  */
-export const SET_STEP_START = 'SET_STEP_START';
-export const SET_STEP_DATA = 'SET_STEP_DATA';
+export const SET_STEP_START = "SET_STEP_START";
+export const SET_STEP_DATA = "SET_STEP_DATA";
+export const SET_STEP = "SET_STEP";
+export const UPDATE_DATA = "UPDATE_DATA";
+export const REMOVE_STEP = "REMOVE_STEP";
 
 /**
  * Initialer State, wenn noch keine Action gefeuert wurde.
  * Der erste Dispatch, basiert auf diesem initial State.
  * Mit jedem Dispatch verändert sich der State dann.
  */
-const initialState = {};
+const initialState = {
+  currentStep: 0,
+  stepsIncluded: [0],
+};
 
 /**
  * Reducer
@@ -35,22 +41,31 @@ const initialState = {};
  */
 const appReducer = produce((draft, action) => {
   switch (action.type) {
-
-    // Das hier habe ich nur drin gelassen, damit ich von dir abgucken kann :-)
-    case SET_STEP_START:
-      if (!draft.start) {
-        draft.start = {};
+    case SET_STEP:
+      draft.currentStep = action.step;
+      if (!draft.stepsIncluded.includes(action.step)) {
+        draft.stepsIncluded.push(action.step);
       }
-      draft.start.containers = action.start.containers;
-      draft.start.layers = action.start.layers;
-      draft.start.connectedContainers = action.start.connectedContainers;
-
-      draft.content = {};
       break;
 
-    case SET_STEP_DATA:
-      draft.data = action.data;
-      draft.slider = action.slider;
+    case REMOVE_STEP:
+      const previousStep = draft.stepsIncluded[draft.stepsIncluded.length - 2];
+      draft.currentStep = previousStep;
+      draft.stepsIncluded = draft.stepsIncluded.filter(
+        (el) => el !== action.step
+      );
+      const tmpData = { ...draft.data };
+      draft.data = {};
+      Object.keys(tmpData)
+        .filter((key) => !action.dataToRemove.some((el) => el === key))
+        .forEach((key) => {
+          draft.data[key] = tmpData[key];
+        });
+
+      break;
+
+    case UPDATE_DATA:
+      draft.data = { ...draft.data, ...action.data };
       break;
 
     default:

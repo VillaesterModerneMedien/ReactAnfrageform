@@ -9,30 +9,27 @@
     "fields": [
       {
         "component": "imageButton",
-        "name": "step1a",
+        "name": "step1",
         "image": "/images/house.svg",
         "value": "Im Wohnraum",
         "label": "Im Wohnraum",
-        "stepToGo": 1,
-        "onClick": "{handleClick}"
+        "stepToGo": 1
       },
       {
         "component": "imageButton",
-        "name": "step1b",
+        "name": "step1",
         "image": "/images/garage.svg",
         "value": "Garage",
         "label": "Garage",
-        "stepToGo": 2,
-        "onClick": "{handleClick}"
+        "stepToGo": 2
       },
       {
         "component": "imageButton",
-        "name": "step1c",
+        "name": "step1",
         "image": "/images/aussen.svg",
         "value": "Außenbereich",
         "label": "Außenbereich",
-        "stepToGo": 3,
-        "onClick": "{handleClick}"
+        "stepToGo": 3
       }
     ]
   },
@@ -118,7 +115,7 @@
         "image": "/images/fliese1.svg",
         "value": "Naturstein",
         "label": "Naturstein",
-        "stepToGo": 1
+        "stepToGo": 4
       },
       {
         "component": "imageButton",
@@ -126,7 +123,7 @@
         "image": "/images/fliese2.svg",
         "value": "Mosaik",
         "label": "Mosaik",
-        "stepToGo": 2
+        "stepToGo": 4
       },
       {
         "component": "imageButton",
@@ -134,7 +131,7 @@
         "image": "/images/fliese3.svg",
         "value": "Keramikfliese",
         "label": "Keramikfliese",
-        "stepToGo": 3
+        "stepToGo": 4
       },
       {
         "component": "imageButton",
@@ -142,7 +139,7 @@
         "image": "/images/fliese4.svg",
         "value": "Noch unsicher",
         "label": "Noch unsicher",
-        "stepToGo": 3
+        "stepToGo": 4
       }
     ]
   },
@@ -175,4 +172,3 @@
     ]
   }
 ]
-

@@ -1,55 +1,37 @@
-import './Button.scss';
-import {
-  useParams
-} from "react-router-dom";
-import SVG, { Props as SVGProps } from 'react-inlinesvg';
+import "./Button.scss";
+
+import SVG from "react-inlinesvg";
 import { useContext, useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
-import {AppContext, SET_STEP_DATA} from '../../components/AppContext'
-import jsonData from '../../steps.json';
+import { AppContext, SET_STEP_DATA } from "../../AppContext";
+import jsonData from "../../../data/steps.json";
 
 function Button({ image, value, name, onClick, ...props }) {
   const { state, dispatch } = useContext(AppContext);
   const [stepData, setStepData] = useState({});
-  const history = useHistory();
 
-  const maxPages = jsonData.length
+  const maxPages = jsonData.length;
 
   useEffect(() => {
     setStepData(state?.data || {});
-
   }, [state]);
 
-  // Step ID aus der URL....
-  const { id } = useParams();
-
-
-
-
   const handleClick = (e) => {
-    const newData = {[name]: e.currentTarget.value}
+    const newData = { [name]: e.currentTarget.value };
     //const newData = {'wert1': 'kiki'}
 
-    const mergedData = {...stepData, ...newData};
+    const mergedData = { ...stepData, ...newData };
 
-    const nextID = parseInt(id) + 1
+    const nextID = parseInt(0) + 1;
 
-    console.log('mergedData',mergedData);
+    console.log("mergedData", mergedData);
 
     dispatch({
       type: SET_STEP_DATA,
       data: mergedData,
     });
 
-    console.log('max',maxPages)
-    console.log('next',nextID)
-
-    if(nextID <= maxPages){
-      history.push('/step/' + nextID);
-    }
-    else{
-      alert('Hier is ende')
-    }
+    console.log("max", maxPages);
+    console.log("next", nextID);
   };
 
   /*
@@ -66,10 +48,10 @@ function Button({ image, value, name, onClick, ...props }) {
 
   return (
     <button
-        className="btn button"
-        onClick={handleClick}
-        value={value}
-        id={name}
+      className="btn button"
+      onClick={handleClick}
+      value={value}
+      id={name}
     >
       <SVG src={image} width={50} height="auto" title={name} />
     </button>
