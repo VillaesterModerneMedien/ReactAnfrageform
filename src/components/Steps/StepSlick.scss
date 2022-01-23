@@ -1,24 +1,24 @@
-@import '../styles/variables';
+@import "../../styles/variables";
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-.formOuterContainer{
+.formOuterContainer {
   margin: 20px auto;
   border-radius: 10px;
-  background: #CCC;
+  background: #ccc;
   text-align: center;
   padding: 40px;
   color: $primaryText;
 }
 
-.slick-slider{
+.slick-slider {
   margin: 20px auto;
   width: 100%;
   border-radius: 10px;
-  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.58);
-  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.58);
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.58);
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.58);
   border: 2px solid white;
-  background: #F3F3F3;
+  background: #f3f3f3;
   text-align: center;
   padding: 40px;
   box-sizing: border-box;
@@ -37,17 +37,17 @@
   text-align: center;
   left: 0;
 }
-.formElementsContainer{
+.formElementsContainer {
   max-width: 480px;
   margin: 0 auto;
 }
-.formElementsContainer.buttons{
+.formElementsContainer.buttons {
   display: flex;
   justify-content: space-around;
   text-align: center;
 }
 
-.mainTitle{
+.mainTitle {
   font-family: Open Sans;
   font-weight: 700;
 }

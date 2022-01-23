@@ -1,7 +1,7 @@
-@import '../../styles/variables';
+@import "../../../styles/variables";
 
 .imageButton {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   border: none;
   color: white;
   cursor: pointer;
@@ -18,15 +18,15 @@
   box-shadow: rgba(100, 100, 111, 0.05) 0px 7px 5px 0px;
   transition: all 100ms ease-in;
 }
-.imageButton:hover{
+.imageButton:hover {
   transform: scale(1.1);
   transition: all 100ms ease-in;
 }
 
-.st0{
- fill: $primaryText !important;
+.st0 {
+  fill: $primaryText !important;
 }
 
-.imageButtonContainer label{
-  font-family: 'Open Sans';
+.imageButtonContainer label {
+  font-family: "Open Sans";
 }
